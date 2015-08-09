@@ -1,0 +1,44 @@
+* {
+    font-family: "Courier new", monospace;
+}
+body {
+    background-color: #000;
+    color: #0F0;
+}
+#ICON {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+#PRODUCTS > .dl-horizontal > dt,
+#SNS > .dl-horizontal > dt {
+    width: 6em;
+}
+
+#PRODUCTS > .dl-horizontal > dd,
+#SNS > .dl-horizontal > dd {
+    margin-left: 7em;
+}
+
+#LAB ruby {
+    line-height: 100%;
+}
+
+#LAB rt {
+    line-height: 50%;
+}
+
+#LAB > article {
+    background: #FEFEFE;
+    color: #131313;
+    padding: 1em;
+    margin: 5em 0;
+}
+
+:lang(ja) {
+    font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "Hiragino Sans GB", 'Noto Sans Japanese', "source Han Sans", '源ノ角ゴシック', "メイリオ", Meiryo, sans-serif;
+}
+
+p:lang(ja) {
+    line-height: 1.6;
+}
