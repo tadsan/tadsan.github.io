@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<title>JavaScript Quiz [x + 0 == x - 0]</title>
+<meta charset="UTF-8">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+<style>
+body {
+	background-color: #000;
+	color: #0F0;
+}
+
+code {
+	font-size: small;
+	font-family: 'Monaco', 'Consolas', 'Courier New', 'FreeMono', monospace;
+}
+a {
+	color: #0F0;
+	text-decoration: none;
+}
+a:hover {
+	border-bottom: dotted 1px;
+}
+
+#QUIZ table {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #0F0;
+	border-spacing: 0;
+	padding: 1px;
+	width: 65%;
+	table-layout: fixed;
+}
+
+
+#QUIZ table td, #QUIZ table th{
+	border-width: 1px 0;
+	border-color: #3F3;
+}
+
+#QUIZ table td {
+	padding: 0.5em;
+	text-align: center;
+}
+
+#QUIZ table th.expr {
+	width: 30%;
+}
+
+#QUIZ table td.expr {
+	text-align: center;
+}
+
+#QUIZ table td.correct code em {
+	color: #6CF;
+}
+
+#QUIZ table td.wrong code em {
+	color: #F99;
+}
+
+code var, code em {
+	color: #FFF;
+	margin: 0.4em;
+	font-weight: bold;
+	font-style: normal;
+}
+
+#QUIZ select {
+	font-size: small;
+	background-color: #000;
+	color: #0F0;
+}
+
+#SCORE {
+	top: 3em;
+	right: 10%;
+	width: 20%;
+	position: fixed;
+	font-size: xx-large;
+	text-align: left;
+}
+
+#SCORE > span.frame {
+	padding: 0.5em 1em;
+	border: solid 1px;
+}
+
+#SCORE .your_score {
+	color: #6CF;
+	font-style: normal;
+	font-size: xx-large;
+}
+
+#SCORE .total_score {
+	font-size: large
+}
+
+#SCORE button#CHECK {
+	margin: 2em 0;
+	padding: 0.5em 1em ;
+	font-size: medium;
+	background-color: #000;
+	color: #0F0;
+	border: solid 2px;
+}
+
+</style>
+<script>
+(function(){
+var values = [
+	['{}', '[]', '(function(){})', 'null', 'undefined'],
+	['Infinity', 'Array', '0', 'false', 'NaN'],
+	['""', '"a"', '"0"', '"1"', '"0.1"'],
+	['"0x"', '"."', '" "', 'Array()', '(function(){}())']
+];
+var problems = values.reduce(function(acc, n){ return acc + n.length; }, 0);
+var scores = new Array(problems);
+
+var quote = function (val) {
+	//var result = (val.search("function") < 0) ? '"' + val + '"' : val;
+	var result = '"' + val + '"';
+	return result;
+}
+
+var plus = function (x, b) {
+	var x = eval(x);
+	var result = x + 0;
+	return ((typeof(result) == "string") && b) ? quote(result) : result ;
+}
+
+var minus = function (x, b) {
+	var x = eval(x);
+	var result = x - 0;
+	return ((typeof(result) == "string") && b) ? quote(result) : result ;
+}
+
+var compare = function (x) {
+	return plus(x) == minus(x);
+}
+
+var id2xy = function (id) {
+	var x = Math.floor(id / 5);
+	var y = id % 5;
+	return [x, y];
+}
+
+var rating = function () {
+	return scores.reduce(function(acc, n){ return n ? acc + 1 : acc; }, 0);
+}
+
+var check = function (id, answer) {
+	var p = id2xy(id);
+	var x = p[0], y = p[1];
+	var value = values[x][y];
+	var result = compare(value).toString();
+	var is_correct = (answer == result);
+	if (scores[id] == undefined){
+		scores[id] = is_correct;
+		return (answer != "none") ? is_correct : undefined;
+	} else {
+		return undefined;
+	}
+}
+
+$(function(){
+	var quiz = $("#QUIZ");
+	quiz.html("");
+	var expr = "var x = <var>#{val}</var>";
+	var table = $("<table border></table>");
+	var thr = $('<tr><th class="expr">expr</th><th></th><th><code>x + 0</code></th><th><code>x - 0</code></th><th><code>x + 0 == x - 0</code></th>');
+	var str_select = '<select class="answer" id="S#{id}"><option value="none">-</option><option value="true">true</option><option value="false">false</option></select>';
+	var str_codeem = '<code><em>#{value}</em></code>';
+	var jq_selected = 'select#S#{id} option:selected';
+	var total = problems * 5;
+	var show_answer = function(id, tr){
+		var p = id2xy(id);
+		var x = p[0], y = p[1];
+		var value = values[x][y];
+		var q = $(jq_selected.replace("#{id}", id));
+		var f = q.val();
+		var is_correct = check(id, f);
+		if(is_correct != undefined){
+			var klass = is_correct ? "correct" : "wrong";
+			tr.find('td.plus, td.minus, td.compare').addClass(klass);
+		}
+		tr.find('.plus').html(str_codeem.replace("#{value}", plus(value, true)));
+		tr.find('.minus').html(str_codeem.replace("#{value}", minus(value, true)));
+		tr.find('.compare').html(str_codeem.replace("#{value}", compare(value)));
+	}
+	
+	var update_score = function(){
+		var your = rating() * 5;
+		$("div#SCORE .your_score").text(your);
+	}
+
+	for (var i = 0; i < values.length; i++) {
+		table.append(thr.clone());
+		for (var j = 0; j < values[i].length; j++){
+			var id = i * 5 + j;
+			var tr = $('<tr id="Q' + id + '"></tr>');
+			var select = $(str_select.replace("#{id}", id));
+			tr.append($('<td class="expr"><label for name="S' + id + '"><code>' + expr.replace("#{val}", values[i][j] ) + '</code></label></td>\n'));
+			tr.append($('<td class="select"></td>').append(select));
+			tr.append($('<td class="plus"></td>'));
+			tr.append($('<td class="minus"></td>'));
+			tr.append($('<td class="compare"></td>'));
+			table.append(tr);
+		}
+		quiz.append(table);
+	}
+	
+	quiz.append($());
+	var jq_score = $('<div id="SCORE"><span class="frame"><em class="your_score">#{your}</em> / <span class="total_score">#{total}</span></span></div>'
+			.replace("#{your}", '0')
+			.replace("#{total}", total));
+	jq_score.append('<button id="CHECK">check all answer</button>');
+	quiz.append(jq_score);
+	
+	$("#QUIZ select.answer").change(function(){
+		var tr = $(this).parents('tr');
+		var id = tr.attr("id").split("Q")[1];
+		show_answer(id, tr);
+		update_score();
+	});
+
+	$("button#CHECK").click(function(){
+		var tr, q;
+		var query = 'tr#Q#{id}';
+		for (var id = 0; id < problems; id++) {
+			q = query.replace("#{id}", id);
+			tr = $(q);
+			show_answer(id, tr);
+		}
+		update_score();
+	});
+});
+}());
+</script>
+</head>
+<body>
+<h1>JavaScript Quiz [x + 0 == x - 0] <a href="http://b.hatena.ne.jp/entry/http://dt.zonu.me/lab/jsquiz.html"><img src="http://b.hatena.ne.jp/entry/image/http://dt.zonu.me/lab/jsquiz.html" src="hatena bookmark"></a></h1>
+<p><a href="http://d.hatena.ne.jp/nishiohirokazu/20120427/1335518839">JavaScriptクイズ「x + 0 == x - 0」 - 西尾泰和のはてなダイアリー</a></p>
+<noscript>
+<p>JavaScript が有効な環境では、採点及び式の評価値を参照することができます</p>
+</noscript>
+<div id="QUIZ">
+<dl>
+<dt><code>var x = <u>{}</u>; console.log(x + 0 == x - 0)</code></dt>
+<dt><code>var x = <u>[]</u>; console.log(x + 0 == x - 0)</code></dt>
+<dt><code>var x = <u>(function(){})</u>; console.log(x + 0 == x - 0)</code></dt>
+<dt><code>var x = <u>null</u>; console.log(x + 0 == x - 0)</code></dt>
+<dt><code>var x = <u>undefined</u>; console.log(x + 0 == x - 0)</code></dt>
+</dl>
+<dl>
+<dt><code>var x = <u>Infinity</u>; console.log(x + 0 == x - 0)</code></dt>
+<dt><code>var x = <u>Array</u>; console.log(x + 0 == x - 0)</code></dt>
+<dt><code>var x = <u>0</u>; console.log(x + 0 == x - 0)</code></dt>
+<dt><code>var x = <u>false</u>; console.log(x + 0 == x - 0)</code></dt>
+<dt><code>var x = <u>NaN</u>; console.log(x + 0 == x - 0)</code></dt>
+</dl>
+<dl>
+<dt><code>var x = <u>""</u>; console.log(x + 0 == x - 0)</code></dt>
+<dt><code>var x = <u>"a"</u>; console.log(x + 0 == x - 0)</code></dt>
+<dt><code>var x = <u>"0"</u>; console.log(x + 0 == x - 0)</code></dt>
+<dt><code>var x = <u>"1"</u>; console.log(x + 0 == x - 0)</code></dt>
+<dt><code>var x = <u>"0.1"</u>; console.log(x + 0 == x - 0)</code></dt>
+</dl>
+<dl>
+<dt><code>var x = <u>"0x"</u>; console.log(x + 0 == x - 0)</code></dt>
+<dt><code>var x = <u>"."</u>; console.log(x + 0 == x - 0)</code></dt>
+<dt><code>var x = <u>" "</u>; console.log(x + 0 == x - 0)</code></dt>
+<dt><code>var x = <u>Array()</u>; console.log(x + 0 == x - 0)</code></dt>
+<dt><code>var x = <u>(function(){}())</u>; console.log(x + 0 == x - 0)</code></dt>
+</dl>
+</div>
+</body></html>
