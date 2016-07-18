@@ -12,11 +12,11 @@ body {
 }
 
 .prof-unit > .dl-horizontal > dt {
-    width: 6em;
+    width: 7em;
 }
 
 .prof-unit > .dl-horizontal > dd {
-    margin-left: 7em;
+    margin-left: 8em;
 }
 
 #LAB ruby {
