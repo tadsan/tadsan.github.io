@@ -10,13 +10,12 @@ body {
     top: 15px;
     right: 15px;
 }
-#PRODUCTS > .dl-horizontal > dt,
-#SNS > .dl-horizontal > dt {
+
+.prof-unit > .dl-horizontal > dt {
     width: 6em;
 }
 
-#PRODUCTS > .dl-horizontal > dd,
-#SNS > .dl-horizontal > dd {
+.prof-unit > .dl-horizontal > dd {
     margin-left: 7em;
 }
 
