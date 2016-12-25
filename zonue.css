@@ -13,6 +13,7 @@ body {
 
 #ヾ〃＞＜ﾉﾞ☆:first-child::before {
     content: "ヾ(〃＞＜)ﾉﾞ☆";
+    margin-right: 0.4em;
 }
 
 .prof-unit > .dl-horizontal > dt {
