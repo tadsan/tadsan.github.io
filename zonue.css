@@ -11,6 +11,10 @@ body {
     right: 15px;
 }
 
+#ヾ〃＞＜ﾉﾞ☆:first-child::before {
+    content: "ヾ(〃＞＜)ﾉﾞ☆";
+}
+
 .prof-unit > .dl-horizontal > dt {
     width: 7em;
 }
@@ -40,4 +44,11 @@ body {
 
 p:lang(ja) {
     line-height: 1.6;
+}
+
+.collaborator::after {
+    content: "[collaborator]";
+    color: #0A0;
+    margin-left: 0.3em;
+    text-decoration-line: none;
 }
