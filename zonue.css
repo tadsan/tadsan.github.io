@@ -55,6 +55,13 @@ p:lang(ja) {
     line-height: 1.6;
 }
 
+p img.chat-icon {
+    border: none;
+    height: 1.5em;
+    width: 1.5em;
+    margin: 0 5px;
+}
+
 .collaborator::after {
     content: "[collaborator]";
     color: #0A0;
