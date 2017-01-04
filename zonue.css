@@ -24,6 +24,14 @@ body {
     margin-left: 8em;
 }
 
+.prof-unit > .dl-horizontal.short > dt {
+    width: 2.5em;
+}
+
+.prof-unit > .dl-horizontal > dd {
+    margin-left: 3.5em;
+}
+
 #LAB ruby {
     line-height: 100%;
 }
