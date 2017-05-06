@@ -1,0 +1,75 @@
+==================================================================
+https://keybase.io/tadsan
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://tadsan.github.io
+  * I am tadsan (https://keybase.io/tadsan) on keybase.
+  * I have a public key with fingerprint A8D6 FCF2 CC1F C8D4 1938  F57D 9720 C98B E437 2AD6
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "01205f0cd89524be5980c01198b6d4945b5af104abcb93719f5ba1d9bf8c6a89e16b0a",
+            "fingerprint": "a8d6fcf2cc1fc8d41938f57d9720c98be4372ad6",
+            "host": "keybase.io",
+            "key_id": "9720c98be4372ad6",
+            "kid": "01017fe4410e9111d2ce818efec27ffb09b155b4707b84596959a90199b0cfc458f30a",
+            "uid": "787d56fa76a49c32f8f53bfe13c77319",
+            "username": "tadsan"
+        },
+        "service": {
+            "hostname": "tadsan.github.io",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1494098671,
+    "expire_in": 157680000,
+    "prev": "192e3fcdedb27250d2ca83236a6e15da4a0be9ab30eaa2ea0c614131f39ee00b",
+    "seqno": 29,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.70
+Comment: https://keybase.io/crypto
+
+yMNwAnicbVJ/UFRVFF5FNECNHEmZBbRHktKG977fd8uxGp1xQErzF4wQ3HfffewD
+3F12lyVcAZvQFEFNGrdxI4fJNI0EHEbHQWsJMBFKy8wZxSFScKg/VrOQRpPeUv7R
+TPefO/ec7/vOd849XTMiTNGT/PN7dt2SUn+c1NtxoNSUPZMJ+RjFoZYzVh9TRCcu
+WqxStyevSFcZKwMgCwQNEFVGAssrVEAyIABCJCuiyiNeUASsQcBjhSiIkyDSBAVD
+FSmaTEQsIwpFBWDGwmi6vYC6nC7d7jFksayKGtFYQqBGZJWHiJM1QVKRxAJiaFOe
+k1isigbR5nCHGYY5Bbtpmu4wYsYjb8Le/+Af+wZQ0ijPQ0ARhFBlCZWhTDVKWEnT
+FIAUKAgKLwFJkXkBiUhAGAGIkAKIRnhB1rgJ36UTcpIsqYKoYUnEPCIcqxluOUWj
+kCOSxEEUBrqpy443UQPtwaob25kKC2PEvDqh4bGG+/hPPq1A99hKlX86crocHgdx
+FBtZm8fjdFvDbE+5Mwwvo0rev0J5im5XjUkaDC91uXWHnbFCA0k8elgZGj8CkCxK
+0MLQt5y6i+bpYYQgiTIwTrgO9RqSELGU04hKVYWVWAEY48Eyx3IiFikUVMxjoFCE
+FQ5QjFmKAREhDzmocYhSABQm3FqJ3cFYWWT4xAWGplsvsGNPqYsyFV915EwxTYo2
+TY2cHF4xU3RU7OPFO7jxyfHspkEvU3NueOF+S/zeSPXu7MKc0YJ4Z2psy9I9cOXt
+Rl/gwsPsbadm2Yq+GF1IAusbtuYvb4k6cTq3uapvVWVCYtSz694f1Puux4xkmvvq
+Etzn+8AJR1AfO+6aW3vyKDvGr0wfOfbghRu7k7pvXRSSCiuS7xyfwdKijvwNDaYP
+/CmV3rP6azdTL41MXiK8XHgibsBxZnP75ftLp57cvqgnZVrtZlI9PDa3+Jv9TSkZ
+9vH7Z++Rn2vWLpgynCUcPkf2KV0JN/xJJdXV+5p8UZ8PRC7IGTbf7N+S+yitu/DM
+vRWhHU8kqszdj+2++t6MY2NTpt/+fc/lFnxn/aGG4K/M9q5LpDImZ+131/sHeh4F
+hAeRf03vXjxUL4FP3hnN7dk4f9qhJfM5vnljevIV/9FNhy9n1iW99+eBDQLTOmRu
+nb1j7cCRo6uXVflGKq8d/M0Ggu++yGTsKv/h2prdndb8h61Xr4x/lhhbUnsoFIyY
+dyTi7UXtMyPyqy2z2lwrtmdZyn5qazi1mEm7cH1LVnzVSPvQR41lqLl3zpdPv2mp
+iQ2dsTlWx4Q4bdmrua1uf9vp+l+yW1/qfKYfZzwvN4ein3JWfJq5M8OcXjIQCAzJ
+316su/p11l7T6U4/OFddGxfY/Jw3fs7WwTbzmnWt21r8b3yY2pj8Srv5fDBu5+vr
+lrO2Fi447/vxVX+Man8DSLnCVA==
+=zi55
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/tadsan
+
+==================================================================
