@@ -5,71 +5,121 @@
 <title>ヾ(〃＞＜)ﾉﾞ☆ @tadsan, USAMI Kenta</title>
 <link rel="canonical" href="https://tadsan.github.io/">
 <link rel="icon" type="img/png" href="//secure.gravatar.com/avatar/71bcd248e3388ab0718c7db7bf2d69f5.png">
-<script>
- var re = new RegExp("^http://tadsan.github.io/", 'i');
- if (re.test(location.href)) {
-     location.href = location.href.replace(re, "https://tadsan.github.io/");
- }
-</script>
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<link rel="stylesheet" href="/zonue.css">
-<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.css">
+
+<style>
+body {
+    padding-top: 1rem;
+}
+
+h1 {
+    padding-top: 1rem;
+}
+
+#ICON {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+#ヾ〃＞＜ﾉﾞ☆:first-child::before {
+    content: "ヾ(〃＞＜)ﾉﾞ☆";
+    margin-right: 0.4em;
+}
+</style>
+
+<meta property="og:title" content="@tadsan, USAMI Kenta">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tadsan.github.io/">
+<meta property="og:image" content="https://secure.gravatar.com/avatar/fb26a322a75c2aee85f3a47bb91dc487?s=128">
+<meta property="og:description" content="I'm a DT, language hobbyist, Emacs Lisper and PHPer.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@tadsan">
+<meta name="twitter:creator" content="@tadsan">
+<meta name="twitter:title" content="@tadsan, USAMI Kenta">
+<meta name="twitter:image" content="https://secure.gravatar.com/avatar/fb26a322a75c2aee85f3a47bb91dc487?s=128">
+<meta name="twitter:description" content="I'm a DT, language hobbyist, Emacs Lisper and PHPer.">
 
 <div class="container">
-    <div class="page-header">
+    <header class="page-header section section-inverse">
         <h1 id="ヾ〃＞＜ﾉﾞ☆">@tadsan, USAMI Kenta</h1>
         <p>I'm a <a href="https://en.wiktionary.org/wiki/DT#Japanese"><abbr lang="ja" title="童貞">DT</abbr></a>, language hobbyist, Emacs Lisper and PHPer.  Lives in Tokyo, Japan.  I work in <a href="http://www.pixiv.co.jp/">pixiv Inc.</a> from <time datetime="2012-11-15">Nov 2012</time>.</p>
         <a href="/"><img id="ICON" src="//secure.gravatar.com/avatar/fb26a322a75c2aee85f3a47bb91dc487?s=128" alt="@tadsan's icon"></a>
-    </div>
+    </header>
     <article class="prof-unit" id="PROFILE">
         <h1>Profile</h1>
-        <dl class="dl-horizontal">
-            <dt style="padding-top: 12px;">Legal name</dt><dd>USAMI Kenta (<ruby lang="ja">宇佐美健太<rp>|</rp><rt>うさみ けんた</rt>)</ruby></dd>
-            <dt>Screen name</dt><dd>tadsan, Zonu.EXE <small lang="ja">(ぞぬ・えぐぜ)</small>, Megurine Luka, kusami3</dd>
+        <dl class="row">
+            <dt class="col-sm-3">Legal name</dt>
+            <dd class="col-sm-9 offset-sm-1">USAMI Kenta (<ruby lang="ja">宇佐美健太<rp>|</rp><rt>うさみ けんた</rt>)</ruby></dd>
+            <dt class="col-sm-3">Screen name</dt>
+            <dd class="col-sm-9 offset-sm-1">tadsan, Zonu.EXE <small lang="ja">(ぞぬ・えぐぜ)</small>, Megurine Luka, kusami3</dd>
         </dl>
     </article>
     <article class="prof-unit" id="BLOGS">
         <h1>Blogs</h1>
         <ul>
-            <li><a href="http://cho-phper.hateblo.jp/" lang="ja">超PHPerになろう</a></li>
-            <li><a href="http://dt.hateblo.jp/" lang="ja">DT日記</a> / (obsolete)<a href="http://d.hatena.ne.jp/zonu_exe/" lang="ja">DT戦記(zonu_exeの日記)</a></li>
+            <li><a href="https://cho-phper.hateblo.jp/" lang="ja">超PHPerになろう</a></li>
+            <li><a href="https://dt.hateblo.jp/" lang="ja">DT日記</a></li>
+            <li><a href="https://medium.com/@tadsan">USAMI Kenta @tadsan – Medium</a></li>
         </ul>
     </article>
     <article class="prof-unit" id="PRODUCTS">
         <h1>Products</h1>
-        <dl class="dl-horizontal">
-            <dt>PHP</dt><dd><a href="https://packagist.org/users/zonuexe/">Packagist</a></dd>
-            <dt>PHP <abbr title="Web Application Framework">WAF</abbr></dt><dd><a href="https://baguettephp.github.io/">Baguette Not Framework</a> (My project)</dd>
-            <dt>Ruby</dt><dd><a href="https://rubygems.org/profiles/zonuexe">RubyGems</a></dd>
-            <dt>Emacs</dt><dd><a href="https://www.emacswiki.org/emacs/ZonuExe">Emacs Wiki</a></dd>
-            <dt>SKK</dt><dd><a href="http://npiiii.osdn.jp/">npiiii/北極三號改</a></dd>
+        <dl class="row">
+            <dt class="col-sm-2">Emacs</dt>
+            <dd class="col-sm-10"><a href="https://www.emacswiki.org/emacs/ZonuExe">Emacs Wiki</a> / <a href="https://melpa.org/#/?q=zonuexe">MELPA</a></dd>
+            <dd class="col-sm-10 offset-sm-2"><a href="https://github.com/emacs-php">Friends of Emacs-PHP development</a></dd>
+            <dt class="col-sm-2">PHP</dt>
+            <dd class="col-sm-10"><a href="https://packagist.org/users/zonuexe/">Packagist</a></dd>
+            <dd class="col-sm-10 offset-sm-2"><a href="https://baguettephp.github.io/">Baguette Not Framework</a> (My project)</dd>
+            <dt class="col-sm-2">Ruby</dt>
+            <dd class="col-sm-10"><a href="https://rubygems.org/profiles/zonuexe">RubyGems</a></dd>
+            <dt class="col-sm-2">SKK</dt>
+            <dd class="col-sm-10"><a href="http://npiiii.osdn.jp/">npiiii/北極三號改</a></dd>
         </dl>
     </article>
     <article class="prof-unit" id="SNS">
         <h1><abbr title="social networking service">SNS</abbr> Accounts</h1>
-        <dl class="dl-horizontal">
-            <dt><a href="https://gnu.io/">GNU social</a></dt><dd><a href="https://freezepeach.xyz/tadsan">tadsan@freezepeach.xyz</a></dd>
-            <dt>Twitter</dt><dd><a href="https://twitter.com/tadsan">@tadsan</a></dd>
-            <dt>GitHub</dt><dd><a href="https://github.com/zonuexe">zonuexe</a></dd>
-            <dt>pixiv</dt><dd><a href="http://pixiv.me/tadsan">pixiv.me/tadsan</a></dd>
-            <dt>Qiita</dt><dd><a href="http://qiita.com/tadsan">tadsan</a></dd>
-            <dt>Hatena</dt><dd><a href="http://profile.hatena.ne.jp/zonu_exe/">id:zonu_exe</a></dd>
-            <dt>slideshare</dt><dd><a href="http://www.slideshare.net/tadsan">Tsugio Jisami</a></dd>
-            <dt>niconare</dt><dd><a href="http://niconare.nicovideo.jp/users/5962">黒點</a> (id:<a href="http://www.nicovideo.jp/user/5962">5962</a>)</dd>
-            <dt>Linkedin</dt><dd><a href="https://jp.linkedin.com/in/kusami3">宇佐美 健太 (kusami3)</a></dd>
+        <dl class="row">
+            <dt class="col-sm-2">Twitter</dt>
+            <dd class="col-sm-10"><a href="https://twitter.com/tadsan">@tadsan</a></dd>
+            <dt class="col-sm-2">GitHub</dt>
+            <dd class="col-sm-10"><a href="https://github.com/zonuexe">zonuexe</a></dd>
+            <dt class="col-sm-2">pixiv</dt>
+            <dd class="col-sm-10"><a href="http://pixiv.me/tadsan">pixiv.me/tadsan</a></dd>
+            <dt class="col-sm-2">Qiita</dt>
+            <dd class="col-sm-10"><a href="http://qiita.com/tadsan">tadsan</a></dd>
+            <dt class="col-sm-2">Hatena</dt>
+            <dd class="col-sm-10"><a href="http://profile.hatena.ne.jp/zonu_exe/">id:zonu_exe</a></dd>
+            <dt class="col-sm-2">slideshare</dt>
+            <dd class="col-sm-10"><a href="http://www.slideshare.net/tadsan">Tsugio Jisami</a></dd>
+            <dt class="col-sm-2">niconare</dt>
+            <dd class="col-sm-10"><a href="http://niconare.nicovideo.jp/users/5962">黒點</a> (id:<a href="http://www.nicovideo.jp/user/5962">5962</a>)</dd>
+            <dt class="col-sm-2">Linkedin</dt>
+<dd class="col-sm-10"><a href="https://jp.linkedin.com/in/kusami3">宇佐美 健太 (kusami3)</a></dd>
         </dl>
     </article>
     <article class="prof-unit" id="CONTRIBUTING">
         <h1>Contribute to……</h1>
-        <dl class="dl-horizontal">
-            <dt><a href="https://www.fsf.org/"><abbr title="The Free Software Foundation">FSF</abbr></a></dt><dd>Annual Associate Member<br><a href="https://my.fsf.org/join"><time datetime="2015-01-02"><img src="767618.png" alt="FSF member since 2015-01-02"></a></time></dd>
-            <dt><a href="https://www.gnu.org/"><abbr title="GNU's Not Unix!">GNU</abbr></a></dt><dd><a href="https://www.gnu.org/licenses/why-assign.html">Copyright assignment</a> for GNU Emacs (<a href="Usami.Kenta.1098449.EMACS.pdf">PDF</a>)</dd>
-            <dt><a href="https://elpa.gnu.org/"><abbr title="GNU Emacs Lisp Package Archive">ELPA</abbr></a></dt><dd><a href="https://github.com/joaotavora/yasnippet">joaotavora/yasnippet</a></dd>
-            <dt>Emacs Lisp</dt><dd><a href="https://github.com/nlamirault/phpunit.el" class="collaborator">nlamirault/phpunit.el</a></dd>
-            <dt>Packagist</dt><dd><a href="https://github.com/bobthecow/psysh">bobthecow/psysh</a>, <a href="https://github.com/mercari/dietcube">mercari/dietcube</a></dd>
-            <dt>Ruby Gems</dt><dd><a href="https://github.com/sue445/rubicure">sue445/rubicure</a></dd>
-            <dt><a href="https://hoa-project.net/En/">Hoa project</a></dt><dd><!--<a href="https://github.com/hoaproject/Console">Hoa\Console</a>--></dd>
+        <dl class="row">
+            <dt class="col-sm-2"><a href="https://www.fsf.org/"><abbr title="The Free Software Foundation">FSF</abbr></a></dt>
+            <dd class="col-sm-10">Annual Associate Member<br><a href="https://my.fsf.org/join"><time datetime="2015-01-02"><img src="767618.png" alt="FSF member since 2015-01-02"></a></time></dd>
+            <dt class="col-sm-2"><a href="https://www.gnu.org/"><abbr title="GNU's Not Unix!">GNU</abbr></a></dt>
+            <dd class="col-sm-10"><a href="https://www.gnu.org/licenses/why-assign.html">Copyright assignment</a> for GNU Emacs (<a href="Usami.Kenta.1098449.EMACS.pdf">PDF</a>)</dd>
+            <dt class="col-sm-2"><a href="https://elpa.gnu.org/"><abbr title="GNU Emacs Lisp Package Archive">ELPA</abbr></a></dt>
+            <dd class="col-sm-10"><a href="https://github.com/joaotavora/yasnippet">joaotavora/yasnippet</a></dd>
+            <dt class="col-sm-2">Emacs Lisp</dt>
+            <dd class="col-sm-10"><a href="https://github.com/nlamirault/phpunit.el" class="collaborator">nlamirault/phpunit.el</a></dd>
+            <dt class="col-sm-2">Packagist</dt>
+            <dd class="col-sm-10"><a href="https://github.com/bobthecow/psysh">bobthecow/psysh</a>, <a href="https://github.com/mercari/dietcube">mercari/dietcube</a></dd>
+            <dt class="col-sm-2">Ruby Gems</dt>
+            <dd class="col-sm-10"><a href="https://github.com/sue445/rubicure">sue445/rubicure</a></dd>
+            <dt class="col-sm-2"><a href="https://hoa-project.net/En/">Hoa project</a></dt>
+            <dd class="col-sm-10"><!--<a href="https://github.com/hoaproject/Console">Hoa\Console</a>--></dd>
         </dl>
     </article>
 </div>
+<!-- <script src="js/bootstrap.min.js"></script>
+     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script> -->
